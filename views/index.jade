@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    .content-wrapper.index
+
+        each index in indicies
+            div.song-wrapper
+
+                div.music-wrapper
+                    audio(controls id="song_#{index}")
+                        source(src="/tracks/#{files[indicies[index]]}" type="audio/mpeg")
+
+                div.button-wrapper
+                    div.play-wrapper(id="play-sample_#{index}")
+                        img.play-btn(src="/images/play.png")
+                        p Play Sample
+
+                div.form-wrapper
+                    div.fields-wrapper
+                        div.field
+                            label Track Title:&nbsp;
+                            input(type="text" autocorrect="off" value="" class="userTrack_#{index}")
+                        div.field
+                            label Composer:&nbsp;
+                            input(type="text" autocorrect="off" value="" class="userComposer_#{index}")
+                    div.feedback-wrapper
+                        p.correct.hidden(id="correct_#{index}") Correct!
+                        p.incorrect.hidden(id="incorrect_#{index}") Incorrect!
+                        p.answer.hidden(id="answer_#{index}") #{trackData[index][1]}, by #{trackData[index][0]}
+                    div.buttons-wrapper
+                        div.response-btn(id="submit-button_#{index}") Got It!
+                        div.response-btn(id="show-button_#{index}") Show Me

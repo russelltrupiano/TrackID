@@ -1,0 +1,3 @@
+.DS_STORE
+public/tracks/*
+node_modules/*

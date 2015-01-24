@@ -1,0 +1,200 @@
+@import 'rupture'
+@import 'jeet'
+@import 'axis'
+@import 'nib'
+
+/*
+ * Nib provides a CSS reset
+ */
+global-reset()
+
+bg-color = #551A8B
+
+extralarge = 1400px
+large = 1200px
+mediumlarge = 1050px
+medium = 850px
+small = 650px
+extrasmall = 500px
+
+content-large-title = 4em
+content-title = 3em
+content-large = 1.5em
+content-medlarge = 1.35em
+content-profile = 1.1em
+content-normal = 1em
+content-small = .85em
+content-extrasmall = .6em
+
+body
+    font-family 'Helvetica'
+    height 100%
+    cf()
+
+    .navbar-wrapper
+        cf()
+        width 100%
+        background-color bg-color
+
+        nav.navbar-inner
+            width 60%
+            margin auto
+            cf()
+
+            +below(extralarge)
+                width 70%
+
+            +below(large)
+                width 80%
+
+            +below(mediumlarge)
+                width 90%
+
+            +below(medium)
+                width inherit
+
+            a
+                color white
+                text-decoration none
+
+            a:hover
+                text-decoration underline
+
+            .navbar-left
+                float left
+                padding 10px 12px 10px 12px
+
+                a.nav-item
+                    font-size content-medlarge
+
+            .navbar-right
+                float right
+                font-size content-normal
+
+                a.nav-item
+                    margin 8px
+
+    .content-wrapper
+        width 60%
+        height 100%
+        cf()
+        margin auto
+        padding-bottom 48px
+
+        +below(extralarge)
+            width 70%
+
+        +below(large)
+            width 80%
+
+        +below(mediumlarge)
+            width 90%
+
+        +below(medium)
+            width 100%
+
+        .title-wrapper
+            padding 50px 0
+
+        .login-wrapper
+            padding 50px 0
+
+        .song-wrapper
+            margin-bottom 12px
+            border-bottom 2px teal solid
+            padding-bottom 32px
+
+            .music-wrapper
+
+                audio
+                    opacity 0
+
+            .button-wrapper
+                margin auto
+                text-align center
+
+                .play-wrapper:hover
+                    cursor pointer
+
+                .play-wrapper
+                    background teal
+                    hover-fade()
+                    padding 16px 0
+                    font-size 1.5em
+                    color white
+                    width 100%
+                    text-align center
+                    margin auto
+
+                    img.play-btn
+                        max-height 48px
+
+            .form-wrapper
+                margin-top 32px
+
+                .fields-wrapper
+                    margin auto
+                    text-align center
+
+                    .field
+                        padding-top 6px
+
+                        input
+                            input()
+
+                .feedback-wrapper
+                    margin auto
+                    width 25%
+                    margin-top 32px
+
+                    +below(medium)
+                        width 50%
+
+                    +below(extrasmall)
+                        width 100%
+
+                    p
+                        text-align center
+
+                    .correct
+                        color green
+                    .incorrect, .answer
+                        color red
+
+
+                .buttons-wrapper
+                    margin auto
+                    text-align center
+                    width 25%
+                    margin-top 32px
+
+                    +below(medium)
+                        width 50%
+
+                    +below(extrasmall)
+                        width 100%
+
+                    .response-btn:hover
+                        cursor pointer
+
+                    .response-btn
+                        padding 10px 0 8px 0
+                        color white
+                        background olive
+                        text-align center
+                        width 48%
+                        hover-fade()
+                        display: inline-block
+
+                    .response-btn:first-child
+                        margin-right 1px
+
+                    .response-btn:last-child
+                        margin-left 1px
+
+    .content-wrapper.index
+        font-size inherit
+
+.hidden
+    display none !important
+    visibility hidden !important
