@@ -1,6 +1,8 @@
 # TrackID
 A simple webapp for studying recognition of songs from short clips throughout
 
+![alt tag](https://cloud.githubusercontent.com/assets/3302260/5886228/088e328a-a35f-11e4-8f23-db7e89616d38.JPG)
+
 ## Getting Set up
 1. Install [nodejs](http://nodejs.org/dist/v0.10.35/node-v0.10.35.pkg)
 2. ```git clone https://github.com/russelltrupiano/TrackID.git```
