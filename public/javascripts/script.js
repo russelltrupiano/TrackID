@@ -1,3 +1,5 @@
+var songLocations = {};
+
 $(document).ready(function() {
 
     $("[id^='song_']").on('loadedmetadata', function() {
@@ -9,6 +11,7 @@ $(document).ready(function() {
         var id = $(this).attr('id').split('play-sample_')[1];
 
         var song = document.getElementById('song_' + id);
+        TrackToSample($("#song_" + id));
         song.play();
 
         setInterval(function() {
@@ -56,13 +59,29 @@ function GetRandomInt(min, max) {
 
 function TrackToSample(context) {
 
-    var song = document.getElementById(context.attr("id"));
+    var id = context.attr("id");
+
+    var song = document.getElementById(id);
 
     var duration = Math.floor(song.duration);
 
     var trackPoint = GetRandomInt(0, duration - 20);
 
-    console.log("Tracking to " + trackPoint + context.attr("id"));
+    // First time
+    if (songLocations[id] === undefined) {
 
-    song.currentTime = trackPoint;
+        songLocations[id] = trackPoint;
+
+        console.log("INITIAL: Tracking to " + trackPoint + context.attr("id"));
+
+        song.currentTime = trackPoint;
+
+    } else if (song.currentTime != songLocations[id]){
+
+        console.log("REPLAY: Tracking to " + songLocations[id] + context.attr("id"));
+
+        song.currentTime = songLocations[id];
+    }
+
+
 }
