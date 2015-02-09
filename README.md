@@ -5,11 +5,16 @@ A simple webapp for studying recognition of songs from short clips throughout
 
 ## Getting Set up
 1. Install [nodejs](http://nodejs.org/dist/v0.10.35/node-v0.10.35.pkg)
-2. ```git clone https://github.com/russelltrupiano/TrackID.git```
-3. ``` cd TrackID```
-4. ``` npm install ```
-5. ``` npm start ```
-6. ``` open http://localhost:3000 ```
+2. Install [git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+## Launcing the project
+Then run the following commands in your terminal
+
+1. ```git clone https://github.com/russelltrupiano/TrackID.git```
+2. ``` cd TrackID```
+3. ``` npm install ```
+4. ``` npm start ```
+5. ``` open http://localhost:3000 ```
 
 ## Using custom songs
 You're more than welcome to replace the songs you're looking to study with your own. By default these files are stored in public/tracks/ and need to have the format [TRACK NAME] - [COMPOSER].[EXTENSION] \(For example Revolution 9 - The Beatles.mp3\). The page will automatically generate a randomized sorting of the tracks and a sample of 20 seconds can be played for each song. Answers can be typed in and checked or shown via the 'Show Me' button below the track
