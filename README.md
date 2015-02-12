@@ -17,7 +17,7 @@ Then run the following commands in your terminal
 5. ``` open http://localhost:3000 ```
 
 ## Using custom songs
-You're more than welcome to replace the songs you're looking to study with your own. By default these files are stored in public/tracks/ and need to have the format [TRACK NAME] - [COMPOSER].[EXTENSION] \(For example Revolution 9 - The Beatles.mp3\). The page will automatically generate a randomized sorting of the tracks and a sample of 20 seconds can be played for each song. Answers can be typed in and checked or shown via the 'Show Me' button below the track
+You're more than welcome to replace the songs you're looking to study with your own. By default these files are stored in public/tracks/ and need to have the format [COMPOSER] - [TRACK NAME].[EXTENSION] \(For example The Beatles - Revolution 9.mp3\). The page will automatically generate a randomized sorting of the tracks and a sample of 20 seconds can be played for each song. Answers can be typed in and checked or shown via the 'Show Me' button below the track
 
 ## Contributing
 Feel free to make a pull request to add any new features!
