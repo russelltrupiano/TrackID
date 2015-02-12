@@ -3,24 +3,12 @@ extends layout
 block content
     .content-wrapper.index
 
-        div.redirect-wrapper
-            - for (var x = 1; x <= 2; x++)
-                div.redirect
-                    a(href="#{x}")
-                        h2 Cycle&nbsp;
-                            span= x
-
-
-
-
-
-
-        //- each index in indicies
+        each index in indicies
             div.song-wrapper
 
                 div.music-wrapper
                     audio(controls id="song_#{index}")
-                        source(src="/tracks/#{files[indicies[index]]}" type="audio/mpeg")
+                        source(src="/tracks/cycle#{cycle}/#{files[indicies[index]]}" type="audio/mpeg")
 
                 div.button-wrapper
                     div.play-wrapper(id="play-sample_#{index}")
