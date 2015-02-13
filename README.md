@@ -1,11 +1,12 @@
 # TrackID
 A simple webapp for studying recognition of songs from short clips throughout
 
+**New:** Choose study mode and listen to the entire track, and quiz mode for random 20 second clips
+
 ![alt tag](https://cloud.githubusercontent.com/assets/3302260/6183585/b0edadaa-b324-11e4-9f2a-b0a764bff116.JPG)
 
-New: Choose study mode and listen to the entire track, and quiz mode for random 20 second clips
-
 ![alt tag](https://cloud.githubusercontent.com/assets/3302260/6183573/a19f575e-b324-11e4-8c22-33426337a3de.JPG)
+
 
 ### [You can view a live demo of this project here](bit.ly/pat201listening)
 
