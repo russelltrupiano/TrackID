@@ -3,7 +3,7 @@ var mode = 0;
 
 $(document).ready(function() {
 
-    $("[id^='song_']").on('error', function() {
+    $("audio[id^='song_']").on('error', function() {
         alert("Error");
     });
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
         $("#stop-sample_" + id).removeClass('hidden');
     }
 
-    $("[id^='play-sample_']").click(function() {
+    $("div[id^='play-sample_']").click(function() {
 
         killEverything();
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
     });
 
     var killEverything = function() {
-        var songs = $("[id^='song_'");
+        var songs = $("[id^='song_']");
 
         for (var i = 0; i < songs.length; i++) {
             var song = $("#song_" + i)[0];
@@ -79,7 +79,7 @@ $(document).ready(function() {
         }
     });
 
-    $("[id^='stop-sample_'").click(function() {
+    $("div[id^='stop-sample_']").click(function() {
         var id = $(this).attr('id').split('stop-sample_')[1];
 
         var song = document.getElementById('song_' + id);
@@ -89,7 +89,7 @@ $(document).ready(function() {
         $("#stop-sample_" + id).addClass('hidden');
     });
 
-    $("[id^='show-button_'").click(function() {
+    $("div[id^='show-button_']").click(function() {
         var id = $(this).attr('id').split('show-button_')[1];
 
         $("#correct_" + id).addClass("hidden");
@@ -98,7 +98,7 @@ $(document).ready(function() {
         $("#answer_" + id).removeClass("hidden");
     });
 
-    $("[id^='submit-button_'").click(function() {
+    $("div[id^='submit-button_']").click(function() {
 
         var id = $(this).attr('id').split('submit-button_')[1];
 
