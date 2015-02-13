@@ -9,6 +9,9 @@
 global-reset()
 
 bg-color = #551A8B
+dark-blue = #000033
+dark-purple = #430051
+dark-green = #00513B
 
 extralarge = 1400px
 large = 1200px
@@ -30,11 +33,13 @@ body
     font-family 'Helvetica'
     height 100%
     cf()
+    background-color #dddddd
 
     .navbar-wrapper
         cf()
         width 100%
-        background-color bg-color
+        background-color dark-purple
+        box-shadow 1px 1px 10px #888888
 
         nav.navbar-inner
             width 60%
@@ -75,7 +80,7 @@ body
                     margin 8px
 
     .content-wrapper
-        width 60%
+        width 40%
         height 100%
         cf()
         margin auto
@@ -99,12 +104,25 @@ body
         .login-wrapper
             padding 50px 0
 
+        .mode-wrapper
+            margin 30px 0
+            width 100%
+            display inline-block
+
+            .onoffswitch
+                float right
+
         .song-wrapper
             margin-bottom 12px
-            border-bottom 2px teal solid
+            border-bottom 1px dark-blue solid
             padding-bottom 32px
+            border-radius 3px
+            border-left 1px dark-blue solid
+            border-right 1px dark-blue solid
+            box-shadow 1px 1px 10px #888888
 
             .music-wrapper
+                height 0
 
                 audio
                     opacity 0
@@ -113,12 +131,16 @@ body
                 margin auto
                 text-align center
 
-                .play-wrapper:hover
+                .play-wrapper:hover,
+                .stop-wrapper:hover,
+                .loading-wrapper:hover
                     cursor pointer
 
-                .play-wrapper
-                    background teal
-                    hover-fade()
+                .play-wrapper,
+                .stop-wrapper,
+                .loading-wrapper
+                    background dark-blue
+                    hover-darken()
                     padding 16px 0
                     font-size 1.5em
                     color white
@@ -155,6 +177,7 @@ body
 
                     p
                         text-align center
+                        width 90%
 
                     .correct
                         color green
@@ -165,11 +188,11 @@ body
                 .buttons-wrapper
                     margin auto
                     text-align center
-                    width 25%
+                    width 45%
                     margin-top 32px
 
                     +below(medium)
-                        width 50%
+                        width 70%
 
                     +below(extrasmall)
                         width 100%
@@ -180,10 +203,10 @@ body
                     .response-btn
                         padding 10px 0 8px 0
                         color white
-                        background olive
+                        background dark-green
                         text-align center
                         width 48%
-                        hover-fade()
+                        hover-darken()
                         display: inline-block
 
                     .response-btn:first-child
@@ -193,17 +216,22 @@ body
                         margin-left 1px
 
         .redirect-wrapper
+            margin-top 40px
+
             .redirect
                 width 100%
                 text-align center
-                background teal
                 color white
                 font-size content-medlarge
                 margin 20px 0
+                box-shadow 1px 1px 10px #888888
+                border-radius 3px
+                hover-darken()
 
                 h2
                     padding 50px
-                    background teal
+                    background dark-green
+                    hover-darken()
 
                 a
                     text-decoration none
@@ -226,3 +254,52 @@ body
 .hidden
     display none !important
     visibility hidden !important
+
+// Code for flip switch
+
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 15px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Quiz";
+    padding-left: 10px;
+    background-color: #000033; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "Study";
+    padding-right: 10px;
+    background-color: #00513B; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 20px; margin: 5px;
+    background: #FFFFFF;
+    border: 2px solid #999999; border-radius: 15px;
+    position: absolute; top: 0; bottom: 0; right: 56px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}

@@ -3,17 +3,30 @@ extends layout
 block content
     .content-wrapper.index
 
+        div.mode-wrapper
+            div.onoffswitch
+                input.onoffswitch-checkbox#myonoffswitch(type="checkbox" name="onoffswitch" checked)
+                label.onoffswitch-label(for="myonoffswitch")
+                    span.onoffswitch-inner
+                    span.onoffswitch-switch
+
         each index in indicies
             div.song-wrapper
 
                 div.music-wrapper
                     audio(controls id="song_#{index}")
-                        source(src="/tracks/cycle#{cycle}/#{files[indicies[index]]}" type="audio/mpeg")
+                        source(data-original="/tracks/cycle#{cycle}/#{files[indicies[index]]}" src="" type="audio/mpeg")
 
                 div.button-wrapper
+                    div.loading-wrapper(id="loading-sample_#{index}").hidden
+                        img.play-btn(src="/images/loading.gif")
+                        p Loading...
                     div.play-wrapper(id="play-sample_#{index}")
                         img.play-btn(src="/images/play.png")
                         p Play Sample
+                    div.stop-wrapper(id="stop-sample_#{index}").hidden
+                        img.play-btn(src="/images/stop.png")
+                        p Stop
 
                 div.form-wrapper
                     div.fields-wrapper
