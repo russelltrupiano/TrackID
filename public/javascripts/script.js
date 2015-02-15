@@ -165,4 +165,9 @@ function TrackToSample(context) {
         }
     }, false);
 
+    song.addEventListener('ended', function() {
+        $("#play-sample_" + songId).removeClass('hidden');
+        $("#stop-sample_" + songId).addClass('hidden');
+    }, false);
+
 }
