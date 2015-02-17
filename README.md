@@ -8,7 +8,7 @@ A simple webapp for studying recognition of songs from short clips throughout
 ![alt tag](https://cloud.githubusercontent.com/assets/3302260/6183573/a19f575e-b324-11e4-8c22-33426337a3de.JPG)
 
 
-### [You can view a live demo of this project here](bit.ly/pat201listening)
+### [You can view a live demo of this project here](http://bit.ly/pat201listening)
 
 ## Getting Set up
 1. Install [nodejs](http://nodejs.org/dist/v0.10.35/node-v0.10.35.pkg)
