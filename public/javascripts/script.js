@@ -115,6 +115,9 @@ $(document).ready(function() {
 
         if (track === userTrack && composer === userComposer) {
             $("#correct_" + id).removeClass("hidden");
+            if(mode == 0) {
+                killEverything();
+            }
         } else {
             $("#incorrect_" + id).removeClass("hidden");
         }
